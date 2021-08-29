@@ -17,7 +17,7 @@ A quick CLI for scanning barcodes from images on Apple platforms using the Visio
 
 **Output:** 
 ```
--- image.jpeg --
+image.jpeg:
 - VNBarcodeSymbologyAztec: Hello world!
 ```
 

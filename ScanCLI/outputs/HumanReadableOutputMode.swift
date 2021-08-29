@@ -12,7 +12,7 @@ class HumanReadableOutputMode: OutputModeRepresentable {
     func printOutput(entries: [ScannedEntry]) -> Bool {
         var fullSuccess = true
         for entry in entries {
-            print("-- \(entry.input) --")
+            print("\(entry.input):")
             do {
                 let observations = try entry.result.get()
                 guard !observations.isEmpty else { throw HumanReadableOutputModeError.noBarcodes }
