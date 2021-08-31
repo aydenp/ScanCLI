@@ -10,10 +10,10 @@
 		C3C3B51D26DBE5DF00101710 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3B51C26DBE5DF00101710 /* main.swift */; };
 		C3C3B52426DBE7A700101710 /* BarcodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3B52326DBE7A700101710 /* BarcodeScanner.swift */; };
 		C3C3B52826DBEE2800101710 /* CodableOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3B52726DBEE2800101710 /* CodableOutput.swift */; };
-		C3C3B52A26DBEEC200101710 /* HumanReadableOutputMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3B52926DBEEC200101710 /* HumanReadableOutputMode.swift */; };
+		C3C3B52A26DBEEC200101710 /* HumanReadableOutputter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3B52926DBEEC200101710 /* HumanReadableOutputter.swift */; };
 		C3C3B52C26DBEF2B00101710 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3B52B26DBEF2B00101710 /* Protocol.swift */; };
-		C3C3B52E26DBEFCA00101710 /* JSONOutputMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3B52D26DBEFCA00101710 /* JSONOutputMode.swift */; };
-		C3C3B53026DBF03200101710 /* PlistOutputMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3B52F26DBF03200101710 /* PlistOutputMode.swift */; };
+		C3C3B52E26DBEFCA00101710 /* JSONOutputter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3B52D26DBEFCA00101710 /* JSONOutputter.swift */; };
+		C3C3B53026DBF03200101710 /* PropertyListOutputter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3B52F26DBF03200101710 /* PropertyListOutputter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,10 +33,10 @@
 		C3C3B51C26DBE5DF00101710 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		C3C3B52326DBE7A700101710 /* BarcodeScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScanner.swift; sourceTree = "<group>"; };
 		C3C3B52726DBEE2800101710 /* CodableOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableOutput.swift; sourceTree = "<group>"; };
-		C3C3B52926DBEEC200101710 /* HumanReadableOutputMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanReadableOutputMode.swift; sourceTree = "<group>"; };
+		C3C3B52926DBEEC200101710 /* HumanReadableOutputter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanReadableOutputter.swift; sourceTree = "<group>"; };
 		C3C3B52B26DBEF2B00101710 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
-		C3C3B52D26DBEFCA00101710 /* JSONOutputMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONOutputMode.swift; sourceTree = "<group>"; };
-		C3C3B52F26DBF03200101710 /* PlistOutputMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistOutputMode.swift; sourceTree = "<group>"; };
+		C3C3B52D26DBEFCA00101710 /* JSONOutputter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONOutputter.swift; sourceTree = "<group>"; };
+		C3C3B52F26DBF03200101710 /* PropertyListOutputter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListOutputter.swift; sourceTree = "<group>"; };
 		C3C3B53126DBF1A600101710 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,23 +71,23 @@
 		C3C3B51B26DBE5DF00101710 /* ScanCLI */ = {
 			isa = PBXGroup;
 			children = (
-				C3C3B52526DBEE0300101710 /* outputs */,
+				C3C3B52526DBEE0300101710 /* outputter */,
 				C3C3B51C26DBE5DF00101710 /* main.swift */,
 				C3C3B52326DBE7A700101710 /* BarcodeScanner.swift */,
 			);
 			path = ScanCLI;
 			sourceTree = "<group>";
 		};
-		C3C3B52526DBEE0300101710 /* outputs */ = {
+		C3C3B52526DBEE0300101710 /* outputter */ = {
 			isa = PBXGroup;
 			children = (
-				C3C3B52626DBEE1300101710 /* codable */,
-				C3C3B52926DBEEC200101710 /* HumanReadableOutputMode.swift */,
-				C3C3B52D26DBEFCA00101710 /* JSONOutputMode.swift */,
-				C3C3B52F26DBF03200101710 /* PlistOutputMode.swift */,
 				C3C3B52B26DBEF2B00101710 /* Protocol.swift */,
+				C3C3B52626DBEE1300101710 /* codable */,
+				C3C3B52926DBEEC200101710 /* HumanReadableOutputter.swift */,
+				C3C3B52D26DBEFCA00101710 /* JSONOutputter.swift */,
+				C3C3B52F26DBF03200101710 /* PropertyListOutputter.swift */,
 			);
-			path = outputs;
+			path = outputter;
 			sourceTree = "<group>";
 		};
 		C3C3B52626DBEE1300101710 /* codable */ = {
@@ -156,11 +156,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3C3B52826DBEE2800101710 /* CodableOutput.swift in Sources */,
-				C3C3B53026DBF03200101710 /* PlistOutputMode.swift in Sources */,
+				C3C3B53026DBF03200101710 /* PropertyListOutputter.swift in Sources */,
 				C3C3B52426DBE7A700101710 /* BarcodeScanner.swift in Sources */,
 				C3C3B51D26DBE5DF00101710 /* main.swift in Sources */,
-				C3C3B52E26DBEFCA00101710 /* JSONOutputMode.swift in Sources */,
-				C3C3B52A26DBEEC200101710 /* HumanReadableOutputMode.swift in Sources */,
+				C3C3B52E26DBEFCA00101710 /* JSONOutputter.swift in Sources */,
+				C3C3B52A26DBEEC200101710 /* HumanReadableOutputter.swift in Sources */,
 				C3C3B52C26DBEF2B00101710 /* Protocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

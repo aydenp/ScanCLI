@@ -1,5 +1,5 @@
 //
-//  HumanReadableOutputMode.swift
+//  HumanReadableOutputter.swift
 //  ScanCLI
 //
 //  Created by Ayden Panhuyzen on 2021-08-29.
@@ -8,7 +8,7 @@
 import Foundation
 import Vision
 
-class HumanReadableOutputMode: OutputModeRepresentable {
+class HumanReadableOutputter: Outputting {
     func printOutput(entries: [ScannedEntry]) -> Bool {
         var fullSuccess = true
         for entry in entries {
@@ -18,6 +18,7 @@ class HumanReadableOutputMode: OutputModeRepresentable {
                 guard !observations.isEmpty else { throw HumanReadableOutputModeError.noBarcodes }
                 print(observations.map { "- \($0.humanReadableDescription)" }.joined(separator: "\n"))
             } catch {
+                // Handle this error ourselves so we can continue onto the next file after
                 print("Error: \(error.localizedDescription)")
                 fullSuccess = false
             }

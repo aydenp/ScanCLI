@@ -17,16 +17,21 @@ guard !files.isEmpty else {
 let scanner = BarcodeScanner()
 let entries = files.map { scanner.scan(fileInput: $0) }
 
-let outputMode: OutputModeRepresentable
+let outputter: Outputting
 if CommandLine.arguments.contains("--json") {
-    outputMode = JSONOutputMode()
+    outputter = JSONOutputter()
 } else if CommandLine.arguments.contains("--plist") {
-    outputMode = PlistOutputMode()
+    outputter = PropertyListOutputter()
 } else {
-    outputMode = HumanReadableOutputMode()
+    outputter = HumanReadableOutputter()
 }
 
-if !outputMode.printOutput(entries: entries) {
-    // Exit with code 1 if the output mode reported an issue printing
+do {
+    if !(try outputter.printOutput(entries: entries)) {
+        // Exit with code 1 if the output mode reported an partial issue but still printed
+        exit(1)
+    }
+} catch let error {
+    print("Error: \(error.localizedDescription)")
     exit(1)
 }
